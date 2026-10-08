@@ -43,6 +43,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/android/build/
 
 # Secrets & local env
 .env
@@ -57,3 +58,12 @@ app.*.map.json
 # Playwright MCP session artifacts
 .playwright-mcp/
 web_*.jpeg
+
+# Keys
+key.properties
+local.properties
+
+# Build Artifacts
+/linux
+/macos
+/windows
