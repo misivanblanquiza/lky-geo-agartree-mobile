@@ -1,0 +1,83 @@
+name: geo_agartree
+description: "A new Flutter project."
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State/DI
+  flutter_riverpod: ^3.4.3
+
+  # Navigation
+
+  # HTTP
+  dio: ^5.11.1
+
+  #  Offline relational store
+  drift: ^2.34.4
+  sqlite3_flutter_libs: ^0.6.0+eol
+  drift_dev: ^2.34.0
+
+  #  Immutable models/code generation
+  freezed_annotation: ^3.1.0
+
+  # Secure token storage
+  flutter_secure_storage: ^11.2.0
+
+  # Background sync
+  workmanager: ^0.10.10
+
+  # Connection hints
+  connectivity_plus: ^7.3.2
+
+  # Locaiton
+  geolocator: ^14.0.1
+
+  # Primary/fallback maps
+  google_maps_flutter: ^2.18.1
+  flutter_map: ^8.3.2
+
+  # QR Scan
+  mobile_scanner: ^7.4.2
+
+  # Photo
+  image_picker: ^1.2.4
+
+  # Runtime Permission
+  permission_handler: ^13.0.2
+
+  # Firebase/local notifications
+  firebase_core: ^4.15.0
+  firebase_messaging: ^16.7.0
+  flutter_local_notifications: ^8.2.0
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+  # Codegen
+  json_serializable: ^6.14.1
+  freezed: ^3.2.5
+  build_runner: ^2.15.1
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.8
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - .env
+
+ 
