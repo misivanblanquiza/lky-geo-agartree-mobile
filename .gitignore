@@ -67,3 +67,7 @@ local.properties
 /linux
 /macos
 /windows
+
+# Per-environment build config (keep only the example committed)
+config/*.json
+!config/*.example.json
