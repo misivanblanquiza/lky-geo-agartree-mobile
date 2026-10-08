@@ -57,6 +57,12 @@ dependencies:
   firebase_core: ^4.15.0
   firebase_messaging: ^16.7.0
   flutter_local_notifications: ^8.2.0
+
+  # Misc
+  flutter_dotenv: ^6.0.1
+  url_launcher: ^6.3.3
+  package_info_plus: ^10.2.2
+  device_info_plus: ^13.3.0
   
 
 dev_dependencies:
