@@ -9,7 +9,7 @@ class AuthInterceptor extends Interceptor {
 
   /// Set in `Options.extra` for requests that must not carry a token (login).
   static const skipAuthKey = 'skipAuth';
-  static const _tokenAttachedKey = '_tokenAttached';
+  static const _attachedTokenKey = '_attachedToken';
 
   @override
   Future<void> onRequest(
@@ -20,7 +20,7 @@ class AuthInterceptor extends Interceptor {
       final token = await _session.readAccessToken();
       if (token != null && token.isNotEmpty) {
         options.headers['Authorization'] = 'Bearer $token';
-        options.extra[_tokenAttachedKey] = true;
+        options.extra[_attachedTokenKey] = token;
       }
     }
     handler.next(options);
@@ -33,10 +33,10 @@ class AuthInterceptor extends Interceptor {
   ) async {
     // Only a 401 on a request that carried a token means "session expired".
     // A 401 from login just means bad credentials.
-    if (err.response?.statusCode == 401 &&
-        err.requestOptions.extra[_tokenAttachedKey] == true) {
+    final attached = err.requestOptions.extra[_attachedTokenKey];
+    if (err.response?.statusCode == 401 && attached is String) {
       try {
-        await _session.handleUnauthorized();
+        await _session.handleUnauthorized(attached);
       } catch (_) {
         // Session cleanup must never mask the original API error.
       }
